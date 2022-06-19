@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Report";
+
+}
+
+
+<div>
+
+   
+
+<div >
+<form method="get" asp-action="SuppliesReport">
+<div>
+    <div>
+    Sales Report <br />
+</div>
+    <div>
+
+         <div><b><label>Select the month </label></b><input name="data" type="datetime-local"  /></div>
+        <button style="margin-top:5px" type="submit" class="btn-custom btn-info">Report</button>
+
+    </div>
+</div>
+</form>
+<br />
+</div>
+
+<div >
+<form method="get" asp-action="SalesReport">
+<div>
+    <div>
+    Supplies Report
+</div>
+    <div>
+
+         <div><b><label >Select the month </label></b><input name="data" type="datetime-local"  /></div>
+        <button style="margin-top:5px" type="submit" class="btn-custom btn-info">Report</button>
+
+    </div>
+</div>
+</form>
+</div>
+
+
+</div>

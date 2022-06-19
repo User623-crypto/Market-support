@@ -1,0 +1,79 @@
+﻿@model IEnumerable<e_support10.Models.SupplyOrderRow>
+
+@{
+    ViewData["Title"] = "Details";
+    double total = 0;
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <table class="table">
+        <thead>
+            <tr>
+               
+                <th>
+
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Quantity)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Cost)
+                </th>
+
+
+                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @if (item.Product != null)
+                        {
+                            @Html.DisplayFor(modelItem => item.Product.Name)
+                        }
+                        
+
+                    </td>
+
+                    <td>
+                        @if (item.Product != null)
+                        {
+                            @Html.DisplayFor(modelItem => item.Quantity)
+                        }
+                        else
+                        {
+                            <small>N/C</small>
+                        }
+
+
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cost)
+                        @{ total += item.Cost * item.Quantity;}
+                    </td>
+                   
+                </tr>
+
+            }
+            <tr>
+                <td colspan="2" class="text-right">
+                    Receipt
+                </td>
+                <td class="text-right">Total:$@total</td>
+                <td>
+                    <a asp-action="Index">Back to List</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+</div>
